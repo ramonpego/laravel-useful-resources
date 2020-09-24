@@ -35,10 +35,10 @@ class CPFRule implements Rule
 //      Calculo para validação do numero
         for ($i = 9; $i < 11; $i++) {
             for ($j = 0, $char = 0; $char < $i; $char++) {
-                $j += $cpf{$char} * (($i + 1) - $char);
+                $j += $cpf[$char] * (($i + 1) - $char);
             }
             $j = ((10 * $j) % 11) % 10;
-            if ($cpf{$char} !== $j) {
+            if ($cpf[$char] !== $j) {
                 return false;
             }
         }
